@@ -1,0 +1,208 @@
+                                                                        SQL TASK
+
+                                                               LEVEL-1 : ABSOLUTE BEGINNER
+
+========================= QUESTIONS ====================================================
+
+1) Select all the columns from the given table- employee
+2) Select only empid and empname from the given table
+3) Select the empid and empname from the table whose salary is more than 10000
+4) Find the empname whose age is between 20 and 30 and salary is less than 40000
+5) Display the empid, empname and sort salary in ascending order
+6) Sort the names of employees from eldest to youngest.
+7) Add a new row of data with the following values to the same employee table- 
+   empid-105, empname-Nick, designation-Architect, salary-38000, age-21
+8) Fetch only unique records from the table.
+9) a) Create a table student with the following columns- student_id, StudentName, SubjectMarks, FavoriteSports, NativeLanguage. Use the required data types. Give primary key and auto increment constraints for the student_id.
+    b)Insert the values into the student table.
+   (1,Santhosh,71,’Cricket’,’Tamil’),(2,Karthick,75,’tennis’,’Hindi’),(3,Nehlu,65,’Soccer’,’Urdu’),(4,Cavy,79,’Hockey’,’French’),(5,Hassan,91,’Badminton’,’Telugu’),
+   (6,Suriya,82,’Cricket’,’Tamil’’),(7,Amit,63,’tennis’,’Kannada’),(8,Paru,50,’Boxing’,’Telugu’),(9,Dhaya,75,’Boxing’,’Hindi’),(10,Shagu,77,’Basketball’,’Telugu’),(11,Archana,46,’Hockey’,’Urdu’)
+10) Add a new column - Address to the same table. Fill the address column with the following values for all the students 
+   (‘Chennai’,’Hyderabad’,’Delhi’,’Lucknow’,’Pondicherry’,’Gujarat’,’Mumbai’,’Delhi’,’Chennai’,’Chandigarh’,’Mumbai’)
+11) Change the SubjectMarks of the students to 99 whose student_id’s are less than 3.
+12) Delete the entire column NativeLanguage.
+13) Delete a record from the same student table whose student_id is 6
+14) Clear all the records from the student table. Retain the table structure.
+15) Delete the table structure of student
+
+====================================== ANSWERS ============================================================
+
+1)  select * from employee
+
+2) select empid, empname from employee
+
+3) select empid, empname from employee where Salary > 10000
+
+4) select empname from employee where age between 20 and 30 and Salary < 40000
+
+5) select empid, empname, Salary from employee order by Salary asc
+
+6) select empname from employee order by age desc
+
+7) insert into employee (empid, empname, designation, Salary, Age)
+  values (105, 'Nick', 'Architect', 38000, 21)
+
+8) select distinct * from employee
+
+9. a) create table student (
+    student_id int auto_increment primary key,
+    StudentName varchar(255),
+    SubjectMarks int,
+    FavoriteSports varchar(255),
+    NativeLanguage varchar(255)
+     )
+   
+   b) insert into student (student_id, StudentName, SubjectMarks, FavoriteSports, NativeLanguage)
+      values
+     (1, 'Santhosh', 71, 'Cricket', 'Tamil'),
+     (2, 'Karthick', 75, 'Tennis', 'Hindi'),
+     (3, 'Nehlu', 65, 'Soccer', 'Urdu'),
+     (4, 'Cavy', 79, 'Hockey', 'French'),
+     (5, 'Hassan', 91, 'Badminton', 'Telugu'),
+     (6, 'Suriya', 82, 'Cricket', 'Tamil'),
+     (7, 'Amit', 63, 'Tennis', 'Kannada'),
+     (8, 'Paru', 50, 'Boxing', 'Telugu'),
+     (9, 'Dhaya', 75, 'Boxing', 'Hindi'),
+     (10, 'Shagu', 77, 'Basketball', 'Telugu'),
+     (11, 'Archana', 46, 'Hockey', 'Urdu')
+
+
+10) alter table student add Address varchar(255)
+
+   update student
+   set Address = case
+     when student_id = 1 then 'Chennai'
+     when student_id = 2 then 'Hyderabad'
+     when student_id = 3 then 'Delhi'
+     when student_id = 4 then 'Lucknow'
+     when student_id = 5 then 'Pondicherry'
+     when student_id = 6 then 'Gujarat'
+     when student_id = 7 then 'Mumbai'
+     when student_id = 8 then 'Delhi'
+     when student_id = 9 then 'Chennai'
+     when student_id = 10 then 'Chandigarh'
+     when student_id = 11 then 'Mumbai'
+     else null
+   end
+
+11) update student set SubjectMarks = 99 where student_id < 3
+
+12) alter table student drop column NativeLanguage
+
+13) delete from student where student_id = 6
+
+14) delete from student
+
+15) drop table student
+
+=========================================================================== LEVEL-2 : INTERMEDIATE =====================================================================================
+
+Dataset Link: https://drive.google.com/drive/folders/1P4YfdrRL5t-ScQBpFrHOvrZZs8Hoc0oT?usp=sharing
+
+1) Display the customer table
+2) Get the description of the customer table?
+3) What is the maximum quantity sold?
+4) What is the minimum quantity sold?
+5) Get the unique values of the city?
+6) Get the unique values of the customer type?
+7) Get the count of the unique values of a gender?
+8) Get the unique values count of the product line?
+9) get the maximum price of the customer table?
+10) get the minimum price of the customer table?
+11) get the unique values of the branch?
+12) Get the count of unique values for the branch column?
+13) Get the Price of the product by creating the view as v3?
+14) Get the 5% tax of the price by creating another view as v4?
+15) Get the unique values of payment?
+16) Get the total count of each unique value of payment?
+17) -- Convert the date column data type into date format?
+18) Get the oldest order date from the customer table?
+19) Get the latest order date from the customer table?
+20) Get the count of customer_type whose name starts with N?
+21) Get the count of customer_type whose second letter is ‘e’?
+22) Get the count of the unique value of product_line whose count is greater than 2? 
+23) Get the count of unique values of payment who count is greater than 3
+24) Get the maximum rating from the customer table?
+25) Get the minimum ratings from the table
+26) Get the ratings ranges from 7 to 10 and order by based on the branches?
+27) Get the ratings ranges from 1 to 5 and order by based on the branches?
+28) Get the average of ratings for each and every product_line and round off the value to 2 decimals?
+29) Get the average of ratings for each and every product_line and round off the value to 1 decimals and arrange them in the descending order?
+30) Get the average of ratings for each and every product_line and round off the value to 2 decimals and arrange them in the ascending order?
+
+===================================================================== ANSWRES =========================================================================================================
+
+1) select * from customer_table
+
+  create table customer_table ASSELECT DISTINCT
+    Branch,
+    City,
+    customer_type, Gender from your_table_name
+
+2) DESCRIBE customer_table
+   select column_name, data_type from information_schema.columns WHERE TABLE_NAME = 'customer_table'
+
+3) Maximum Quantity Sold:
+   To find the maximum quantity sold, we can simply look at the "Quantity" column in the dataset and find the highest value among them.
+
+4) Maximum Quantity Sold = 10
+   Minimum Quantity Sold:
+   Similarly, to find the minimum quantity sold, we can look at the "Quantity" column and find the lowest value among them.
+   Minimum Quantity Sold = 1
+
+4) Unique Values of City:
+   To get the unique values of the "City" column, we can list all the unique cities mentioned in the dataset.
+   Unique Cities: Yangon, Mandalay, Naypyitaw
+
+5) select distinct City from your_table_name
+
+6) select distinct customer_type from your_table_name
+
+7) select count(distinct Gender) AS UniqueGenderCount from customer
+
+8) select count(distinct product_line) AS UniqueProductLineCount from customer
+
+9) select count(distinct product_line) AS UniqueProductLineCount from customer
+
+10) select min(unit_price) AS MinimumPrice from customer
+
+11)  select distinct Branch from customer
+
+12) select count(distinct Branch) AS UniqueBranchCount from customer
+
+13) create view v3 as select product_line, unit_price from customer
+
+14) create view v4 as select product_line, unit_price * 0.05 AS tax_5_percent from customer
+
+15) select distinct Payment from customer
+
+16) select Payment, count(*) as PaymentCount from customer group by Payment
+
+
+17) alter table customer alter column Selling_Date DATE
+
+18) select min(Selling_Date) as OldestOrderDate from customer
+
+19) select max(Selling_Date) as LatestOrderDate from customer
+
+20) select count(*) as countcustomerTypeN from customer where customer_type like 'N%'
+
+21) select count(*) as countcustomerTypeSecondLetterE from customer where substring(customer_type, 2, 1) = 'e'
+
+22) select product_line, count(*) as CountProductLine from customer group by product_line having count(*) > 2
+
+23) select Payment, count(*) as countPayment from customer group by Payment having count(*) > 3
+
+24) select max(Rating) as maximumRating from customer
+
+25) select min(Rating) as minimumRating from customer
+
+26) select Branch, Rating from customer where Rating betwwen 7 and 10 order by Branch
+
+27) select Branch, Rating from customer where Rating between 1 and 5 order by Branch
+
+28) select product_line, round(avg(Rating), 2) as avgRating from customer group by product_line
+
+29) select product_line, round(avg(Rating), 1) as avgRating from customer group by product_line order by avgRating desc
+
+30) select product_line, round(avg(Rating), 2) as avgRating from customer group by product_line order by avgRating asc
